@@ -1,0 +1,268 @@
+/* Reset for safety */
+.product-card,
+.product-card * {
+  box-sizing: border-box;
+}
+
+/* Card wrapper */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.2s ease;
+  position: relative;
+}
+
+/* Hover: subtle lift */
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
+  border-color: #e5e7eb;
+}
+
+/* Image container: fixed height, centered image */
+.image-container {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+/* Slight zoom on hover (but no layout shift) */
+.product-card:hover .image-container img {
+  transform: scale(1.03);
+}
+
+/* Wishlist Button */
+/* .wishlist-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ffffff;
+  border-radius: 999px;
+  padding: 6px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.15);
+} */
+
+.wishlist-btn {
+  position: absolute;
+  top: 8px;
+  right: 1px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wishlist-btn svg {
+  font-size: 20px;
+}
+
+.wish-active {
+  color: #ef4444;
+}
+
+
+
+/* Content */
+.product-content {
+  padding: 10px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Name */
+.product-name {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  min-height: 38px;
+  max-height: 38px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: #111827;
+}
+/* Filters row */
+/* Filters row */
+.products-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 8px 0 12px;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 12px;
+}
+
+/* Each filter block */
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: #374151;
+  min-width: 160px;
+}
+
+.filter-group label {
+  font-weight: 500;
+}
+
+/* Clean select */
+.filter-group select {
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 13px;
+  background-color: #ffffff;
+  color: #111827;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Focus state */
+.filter-group select:focus {
+  border-color: #111827;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .products-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-group {
+    width: 100%;
+  }
+}
+
+
+/* Rating row on card */
+.card-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+/* Stars inline */
+.card-stars-inline {
+  display: inline-flex;
+  gap: 1px;
+}
+
+/* Card stars – consistent with detail page */
+.card-star {
+  font-size: 12px;
+  color: #e5e7eb;
+}
+
+.card-star.filled {
+  color: #fbbf24;
+}
+
+.card-rating-score {
+  font-weight: 500;
+  color: #111827;
+}
+
+.card-rating-count {
+  color: #6b7280;
+}
+
+/* Price + stock */
+.price-section {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Stock */
+.stock {
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #16a34a;
+}
+
+.stock.out-of-stock {
+  color: #dc2626;
+}
+
+/* Add to cart button */
+.cart-btn {
+  width: 100%;
+  padding: 9px 0;
+  background: #111827;
+  color: #f9fafb;
+  border: none;
+  border-radius: 999px;
+  transition: background 0.15s ease, transform 0.1s ease;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: auto;
+  cursor: pointer;
+}
+
+.cart-btn:hover:not(:disabled) {
+  background: #020617;
+  transform: translateY(-1px);
+}
+
+.cart-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .image-container {
+    height: 190px;
+  }
+
+  .product-card {
+    border-radius: 10px;
+  }
+
+  .product-name {
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 15px;
+  }
+}

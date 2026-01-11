@@ -1,0 +1,146 @@
+/* Page background */
+.admin-dashboard-page {
+  min-height: 100vh;
+  background-color: #f5f8ff; /* very light blue background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Main content container */
+.content-container {
+  background-color: white;
+  border-radius: 15px;
+  padding: 50px 60px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 20px rgb(0 0 0 / 0.1);
+}
+
+/* Title style */
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #111;
+  line-height: 1.2;
+}
+
+/* Subtitle / description */
+.subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Button container */
+.button-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Shared button styles */
+.btn {
+  cursor: pointer;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  min-width: 140px;
+  text-align: center;
+}
+
+/* Primary solid button */
+.btn-primary {
+  background-color: #111;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #333;
+}
+
+/* Outline button */
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid #111;
+  color: #111;
+}
+
+.btn-outline:hover {
+  background-color: #111;
+  color: white;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .content-container {
+    padding: 30px 25px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+
+
+
+
+/* Base button styles */
+button {
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 2px solid transparent;
+  min-width: 120px;
+}
+
+/* Primary button: black background, white text */
+button.primary {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+button.primary:hover {
+  background-color: #333;
+  border-color: #333;
+}
+
+/* Secondary button: white background, black text, black border */
+button.secondary {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
+}
+
+button.secondary:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Disabled state */
+button:disabled,
+button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Add some spacing between buttons */
+button + button {
+  margin-left: 12px;
+}

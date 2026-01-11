@@ -1,0 +1,261 @@
+/* ========== PROFILE PAGE SHELL ========== */
+
+.profile-page-shell {
+  max-width: 900px;
+  margin: 32px auto 40px;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.profile-header {
+  margin-bottom: 12px;
+}
+
+.profile-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.profile-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* loading / error */
+.profile-loading,
+.profile-error-text {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+/* ========== MAIN CARD ========== */
+
+.profile-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+  padding: 18px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Sections inside card */
+.profile-section {
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 14px;
+  margin-bottom: 8px;
+}
+
+.profile-section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* SECURITY SECTION */
+.profile-security {
+  margin-top: 0;
+}
+
+.profile-security-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;   /* 🔽 less gap before the form */
+}
+
+/* Link-style button for "Edit" */
+.profile-link-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #111827;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.profile-link-btn:hover {
+  color: #000000;
+}
+
+/* Inline password form – compact */
+.profile-password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;             /* 🔽 reduced gap between fields */
+  margin-top: 4px;
+}
+
+
+/* Layout for form rows */
+.profile-field-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+/* Fields */
+.profile-field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profile-field label {
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.profile-field input {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.profile-field input:focus {
+  border-color: #111827;
+  box-shadow: 0 0 0 1px #11182710;
+}
+
+.profile-field input[disabled] {
+  background: #f9fafb;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.profile-field input[aria-invalid="true"] {
+  border-color: #dc2626;
+}
+
+.profile-field-error {
+  font-size: 12px;
+  color: #dc2626;
+}
+
+.profile-field-help {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* Primary button (same style as auth / cart / checkout) */
+.profile-btn-primary {
+  margin-top: 4px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: none;
+  background: #111827;
+  color: #f9fafb;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.profile-btn-primary:hover:not(:disabled) {
+  background: #020617;
+  transform: translateY(-1px);
+}
+
+.profile-btn-primary:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Messages */
+.profile-message {
+  margin-top: 6px;
+  font-size: 13px;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+
+.profile-message-success {
+  background: #ecfdf3;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.profile-message-error {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+/* ========== SECURITY SECTION ========== */
+
+.profile-security {
+  margin-top: 4px;
+}
+
+.profile-security-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.profile-security-text {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+/* Link-style button for "Change password" */
+.profile-link-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #111827;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.profile-link-btn:hover {
+  color: #000000;
+}
+
+/* Inline password form */
+.profile-password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  .profile-page-shell {
+    margin: 24px auto 30px;
+    padding: 0 12px;
+  }
+
+  .profile-card {
+    padding: 16px 14px 18px;
+  }
+
+  .profile-field-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .profile-security-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

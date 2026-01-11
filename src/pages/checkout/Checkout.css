@@ -1,0 +1,376 @@
+/* ========== CHECKOUT PAGE ========== */
+
+.checkout-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.checkout-container > h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Main content is stacked */
+.checkout-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Reusable section card */
+.checkout-section {
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  padding: 14px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkout-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Section header row (title + add button) */
+.checkout-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Generic small text */
+.checkout-text {
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.error-text {
+  color: #dc2626;
+}
+
+/* Add New Address trigger button */
+.add-address-trigger {
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #374151;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+.add-address-trigger:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+  transform: translateY(-1px);
+}
+
+/* ========== ADDRESS LIST ========== */
+
+.address-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.address-card {
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.address-radio {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #374151;
+}
+
+.address-radio input[type="radio"] {
+  margin-top: 4px;
+}
+
+.address-radio strong {
+  font-size: 14px;
+  color: #111827;
+}
+
+.address-line {
+  font-size: 13px;
+  color: #4b5563;
+}
+
+/* Delete address */
+.address-delete-btn {
+  border: none;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  transition: color 0.15s ease;
+}
+
+.address-delete-btn:hover {
+  color: #ef4444;
+}
+
+/* ========== ORDER SUMMARY ========== */
+
+.checkout-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: #374151;
+}
+
+.checkout-item-title {
+  margin-bottom: 2px;
+  color: #111827;
+}
+
+.checkout-item small {
+  color: #6b7280;
+}
+
+.checkout-item strong {
+  color: #111827;
+  font-size: 14px;
+}
+
+.checkout-divider {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 6px 0;
+}
+
+.checkout-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #111827;
+}
+
+.checkout-total strong {
+  font-size: 15px;
+}
+
+/* Primary payment / place order button */
+.place-order-btn {
+  margin-top: 8px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: none;
+  background: #111827;
+  color: #f9fafb;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease, opacity 0.15s ease;
+}
+
+.place-order-btn:hover:not(:disabled) {
+  background: #020617;
+  transform: translateY(-1px);
+}
+
+.place-order-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* ========== MODALS (PAYMENT + ADDRESS) ========== */
+
+.payment-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 40;
+}
+
+/* Payment modal */
+.payment-modal {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 16px;
+  background: #ffffff;
+  padding: 18px 16px 16px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.payment-modal h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.payment-modal p {
+  font-size: 14px;
+  color: #374151;
+}
+
+/* Confirm & Cancel buttons */
+.confirm-btn,
+.cancel-btn {
+  margin-top: 4px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease, border-color 0.15s ease;
+}
+
+/* primary (confirm) */
+.confirm-btn {
+  border: none;
+  background: #111827;
+  color: #f9fafb;
+}
+
+.confirm-btn:hover {
+  background: #020617;
+  transform: translateY(-1px);
+}
+
+/* secondary (cancel) */
+.cancel-btn {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #374151;
+}
+
+.cancel-btn:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+  transform: translateY(-1px);
+}
+
+/* Address modal = reuse overlay, different content box */
+.address-modal {
+  width: 100%;
+  max-width: 460px;
+  border-radius: 16px;
+  background: #ffffff;
+  padding: 16px 16px 14px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.address-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.address-modal-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.address-modal-close {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+/* Address form inside modal */
+.address-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.address-modal-form input,
+.address-modal-form textarea {
+  font-size: 13px;
+  padding: 7px 9px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  resize: vertical;
+}
+
+.address-modal-form textarea {
+  min-height: 70px;
+}
+
+.address-modal-form input:focus,
+.address-modal-form textarea:focus {
+  border-color: #111827;
+}
+
+.address-modal-row {
+  display: flex;
+  gap: 8px;
+}
+
+.address-modal-actions {
+  margin-top: 6px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* primary save button (reuse style name) */
+.add-address-btn {
+  padding: 7px 16px;
+  border-radius: 999px;
+  border: none;
+  background: #111827;
+  color: #f9fafb;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.add-address-btn:hover {
+  background: #020617;
+  transform: translateY(-1px);
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  .checkout-container {
+    padding: 16px 12px 28px;
+  }
+
+  .address-modal-row {
+    flex-direction: column;
+  }
+}

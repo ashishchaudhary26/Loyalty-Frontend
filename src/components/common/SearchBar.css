@@ -1,0 +1,71 @@
+/* Outer wrapper: input + button side by side */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+/* Pill input wrapper */
+.search-input-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.search-icon {
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.search-input-wrapper input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #111827;
+  background: transparent;
+}
+
+.search-input-wrapper input::placeholder {
+  color: #9ca3af;
+}
+
+/* Dark pill search button */
+.search-btn {
+  border: none;
+  outline: none;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: #111827;
+  color: #f9fafb;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.search-btn:hover {
+  background: #020617;
+  transform: translateY(-1px);
+}
+
+/* Mobile: full width stack */
+@media (max-width: 768px) {
+  .search-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

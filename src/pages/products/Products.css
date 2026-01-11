@@ -1,0 +1,152 @@
+/* ========== PRODUCTS PAGE ========== */
+
+.products-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Header row: title on left, search+filters on right */
+.products-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+
+.products-header-left h1 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.products-subtitle {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+/* Right side: search + filters */
+.products-header-right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  min-width: 320px;
+}
+
+.products-search {
+  flex: 1;
+  min-width: 230px;
+}
+
+/* Filters to the right of search */
+.products-filters {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+/* Each filter */
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: #374151;
+}
+
+.filter-group label {
+  font-weight: 500;
+}
+
+/* Clean select */
+.filter-group select {
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 13px;
+  background-color: #ffffff;
+  color: #111827;
+  outline: none;
+  cursor: pointer;
+}
+
+.filter-group select:focus {
+  border-color: #111827;
+}
+
+/* Body & grid */
+.products-body {
+  display: flex;
+}
+
+.products-grid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.products-grid-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+/* Messages */
+.products-message {
+  text-align: center;
+  font-size: 14px;
+  color: #4b5563;
+  padding: 20px 0;
+}
+
+.products-message.error-text {
+  color: #b91c1c;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .products-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .products-header-right {
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 100%;
+  }
+
+  .products-search {
+    width: 100%;
+  }
+
+  .products-filters {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .filter-group {
+    min-width: 48%;
+  }
+}
+
+@media (max-width: 600px) {
+  .filter-group {
+    min-width: 100%;
+  }
+
+  .products-grid-inner {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}

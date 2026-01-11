@@ -1,0 +1,83 @@
+/* BUTTONS */
+.btn {
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 16px;
+  border: none;
+  transition: 0.25s ease;
+}
+
+.btn.primary {
+  background: black;
+  color: white;
+}
+
+.btn.primary:hover {
+  opacity: 0.85;
+}
+
+.btn.secondary {
+  background: #eee;
+  color: black;
+}
+
+.btn.secondary:hover {
+  background: #ddd;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* INPUTS */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: 500;
+}
+
+input, select {
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: #000;
+}
+
+.input-error {
+  border-color: red !important;
+}
+
+/* ERROR TEXT */
+.error-text {
+  font-size: 14px;
+  color: red;
+}
+
+/* LOADER */
+.loader {
+  border: 3px solid #ddd;
+  border-top: 3px solid black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
